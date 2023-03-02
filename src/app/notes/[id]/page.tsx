@@ -1,7 +1,7 @@
 async function getNoteById(id: string) {
     const res = await fetch(`http://127.0.0.1:8090/api/collections/posts/records/${id}`,
         {
-            next: {revalidate: 10}
+            next: {revalidate: 10} // incremental static regeneration
         });
     const data = await res.json();
     return data as any;
